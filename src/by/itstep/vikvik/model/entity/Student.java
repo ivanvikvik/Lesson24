@@ -6,9 +6,11 @@ public class Student extends Human {
 
     private double mark;
     private String name;
+    private MarkNote note;
 
     public Student() {
         super();
+        note = new MarkNote();
         super.name = "Alex";
         System.out.println(" Student default constructor");   // debug
     }
@@ -16,15 +18,16 @@ public class Student extends Human {
     public Student(String name, int age, double mark) {
         super(name, age);
         this.mark = mark;
+        note = new MarkNote(mark);
     }
 
     public double getMark() {
-        return mark;
+        return note.getMark();
     }
 
     public void setMark(double mark) {
         if (mark >= MIN_MARK && mark <= MAX_MARK) {
-            this.mark = mark;
+            note.setMark(mark);
         }
     }
 
