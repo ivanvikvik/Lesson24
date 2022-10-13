@@ -4,10 +4,11 @@ public class Human {
     public static final int MAX_AGE = 120;
     public static final int MIN_AGE = 0;
 
-    private String name;
-    private int age;
+    protected String name;
+    protected int age;
 
     public Human() {
+        System.out.println(" Human default constructor");   // debug
     }
 
     public Human(String name, int age) {
