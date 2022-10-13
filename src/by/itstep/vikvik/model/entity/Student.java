@@ -5,14 +5,16 @@ public class Student extends Human {
     public static final int MAX_MARK = 10;
 
     private double mark;
+    private String name;
 
     public Student() {
+        super();
+        super.name = "Alex";
         System.out.println(" Student default constructor");   // debug
     }
 
     public Student(String name, int age, double mark) {
-        this.name = name;
-        this.age = age;
+        super(name, age);
         this.mark = mark;
     }
 
@@ -26,8 +28,7 @@ public class Student extends Human {
         }
     }
 
-    public String getInfo(){
-        return name + ": age = " + age
-                + ", mark = " + mark;
+    public String getInfo() {
+        return super.getInfo() + ", mark = " + mark;
     }
 }
